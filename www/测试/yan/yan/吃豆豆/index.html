@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Yan</title>
+
+    <style>
+        *{    /*通配符选择器 页面所有标签 真实开发  reset.css*/
+            margin: 0;  /*外边距*/
+        }
+        /* body{
+            margin: 0px; 
+        } */
+        body{
+            background-color: #000;
+        }
+        .eat-wrap{
+            width: 200px;  /*宽*/
+            height: 200px;  /*高*/
+            margin-top: 100px; 
+             /*背景颜色*/
+            box-shadow:300px 0px 0px -80px  #fff, /*水平 垂直 模糊 大小 颜色*/
+                       450px 0px 0px -80px  #fff,
+                       600px 0px 0px -80px  #fff,
+                       750px 0px 0px -80px  #fff; 
+            border-radius: 50%; 
+            animation: run 1s infinite ;
+        }
+        .eat-wrap::before{   /*伪元素  虚拟元素 不占有标签结构*/
+            content: "" ; /*激活伪元素*/
+            display: block;/*内联-> 块*/
+            width: 200px;
+            height: 100px;
+            margin-left: 100px; 
+            background-color: #ccc;
+            border-radius:100px 100px 0 0 ; /*左上 右上 右下 左下*/
+            transform: rotate(-30deg);
+            animation :moveTop 1s infinite; 
+        }
+
+        .eat-wrap::after{   /*伪元素  虚拟元素 不占有标签结构*/
+            content: "" ; /*激活伪元素*/
+            display: block;/*内联-> 块*/
+            width: 200px;
+            height: 100px;
+            margin-left: 100px; 
+            background-color: #ccc;
+            border-radius: 0 0 100px 100px; /*左上 右上 右下 左下*/
+            transform: rotate(30deg);
+            animation :moveBottom 1s infinite; 
+        }
+
+        @keyframes moveTop { /*关键动画  0%-100% */
+            0%,100%{
+                transform: rotate(0deg);
+            }
+            50%{
+                transform: rotate(-30deg);
+            }
+          
+        }
+
+        @keyframes moveBottom { /*关键动画  0%-100% */
+            0%,100%{
+                transform: rotate(0deg);
+            }
+            50%{
+                transform: rotate(30deg);
+            }
+           
+        }
+
+        @keyframes run{
+            from{
+                box-shadow:300px 0px 0px -80px  #fff, /*水平 垂直 模糊 大小 颜色*/
+                       450px 0px 0px -80px  #fff,
+                       600px 0px 0px -80px  #fff,
+                       750px 0px 0px -80px  #fff; 
+            }
+            to{
+                box-shadow:150px 0px 0px -80px  #fff, /*水平 垂直 模糊 大小 颜色*/
+                       300px 0px 0px -80px  #fff,
+                       450px 0px 0px -80px  #fff,
+                       600px 0px 0px -80px  #fff; 
+            }
+        }
+
+        h2{
+            color: #fff; 
+            font-size: 120px; 
+            text-shadow : 1px 1px rgba(197,223,248,0.8), 
+                          2px 2px rgba(197,223,248,0.8),
+                          3px 3px rgba(197,223,248,0.8), 
+                          4px 4px rgba(197,223,248,0.8), 
+                          5px 5px rgba(197,223,248,0.8), 
+                          6px 6px rgba(197,223,248,0.8), 
+                          7px 7px rgba(197,223,248,0.8);  
+        }
+    </style>
+
+</head>
+<body>
+    <!--
+        块标签 :  div body html  ....
+            默认可以设置宽高
+        内联标签 : span  a i em .... 伪元素 
+     不可以
+
+    -->
+        
+    <div class="eat-wrap">
+       
+    </div>
+
+    <h2>Loading...</h2>
+
+</body>
+</html>
